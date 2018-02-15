@@ -72,26 +72,17 @@ while (state == LOW) {
   delay(2000);
 
   digitalWrite(red2, LOW);
-  digitalWrite(yellow2, HIGH);
-  delay(1000);
-
-  digitalWrite(yellow2, LOW);
   digitalWrite(green2, HIGH);
   delay(2000);
 
   digitalWrite(green2, LOW);
   digitalWrite(yellow2, HIGH);
   delay(1000);
-
   digitalWrite(yellow2, LOW);
   digitalWrite(red2, HIGH);
   delay(2000);
 
-  digitalWrite(red1, LOW);
-  digitalWrite(yellow1, HIGH);
-  delay(1000);
-
-  digitalWrite(yellow1, LOW);
+  digitalWrite(red1, LOW);;
   digitalWrite(green1, HIGH);
   delay(2000);
   
