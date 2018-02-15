@@ -30,7 +30,7 @@ pinMode(yellow2, OUTPUT);
 pinMode(green2, OUTPUT);
 
 // init state
-state = 0;
+state = LOW;
 
 
 // init traffic light 1 -> GREEN
@@ -49,7 +49,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 state = digitalRead(button); 
   
-  // when button is pressed turn state into 1 and light onboardled)
+  // when button is NOT pressed keep stateLed of
 while (state == LOW) {
   digitalWrite(stateLed, LOW);
   Serial.println(state);
@@ -57,12 +57,11 @@ while (state == LOW) {
   state = digitalRead(button);  
 }
 
+// when button is pressed, switch state to HIGH and start script for switching traffic lights
   state = HIGH;
   digitalWrite(stateLed, HIGH);
   Serial.println(state);
   delay(1000);
-
-// check if button is pressed
 
   digitalWrite(green1, LOW);
   digitalWrite(yellow1, HIGH);
@@ -95,9 +94,10 @@ while (state == LOW) {
   digitalWrite(yellow1, LOW);
   digitalWrite(green1, HIGH);
   delay(2000);
-// reset state to 0 and led off
+  
+// reset state to LOW and led off
 
-state = 0;
+state = LOW;
 digitalWrite(stateLed, LOW);
   Serial.println(state);
   delay(1);    
